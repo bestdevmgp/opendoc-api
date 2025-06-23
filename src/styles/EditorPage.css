@@ -1,0 +1,157 @@
+.editor-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-header {
+  background: white;
+  border-bottom: 1px solid #e9ecef;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-left h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.header-right {
+  display: flex;
+  gap: 10px;
+}
+
+.editor-content {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.sidebar {
+  width: 400px;
+  background: white;
+  border-right: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 80px);
+}
+
+.api-form-section {
+  border-bottom: 1px solid #e9ecef;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.api-form-section h3 {
+  margin-bottom: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.api-list-section {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.api-list-section h3 {
+  margin-bottom: 16px;
+  color: #333;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.preview-section {
+  flex: 1;
+  padding: 20px;
+  background: white;
+  overflow-y: auto;
+}
+
+.preview-section h3 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+.no-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #666;
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+}
+
+.no-selection p {
+  font-size: 1.1rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .editor-content {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    max-height: 50vh;
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .api-form-section {
+    max-height: 300px;
+  }
+  
+  .api-list-section {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .editor-header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .header-left,
+  .header-right {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .editor-page {
+    padding: 0;
+  }
+  
+  .sidebar,
+  .preview-section {
+    padding: 16px;
+  }
+}

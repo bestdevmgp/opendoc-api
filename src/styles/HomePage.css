@@ -1,0 +1,166 @@
+.home-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.home-container {
+  max-width: 1000px;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.home-header {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.logo h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.home-main {
+  padding: 60px 40px;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.welcome-section h2 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.welcome-section p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.action-buttons .btn {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  min-width: 200px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e9ecef;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.home-footer {
+  background: #f8f9fa;
+  padding: 20px 40px;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+}
+
+.home-footer p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .home-header {
+    padding: 40px 20px;
+  }
+  
+  .logo h1 {
+    font-size: 2.2rem;
+  }
+  
+  .logo p {
+    font-size: 1rem;
+  }
+  
+  .home-main {
+    padding: 40px 20px;
+  }
+  
+  .welcome-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .action-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    padding: 20px;
+  }
+  
+  .home-footer {
+    padding: 20px;
+  }
+}
