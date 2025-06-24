@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/ApiList.css';
+import {Pencil} from "lucide-react";
+import {Trash2} from "lucide-react";
 
 export const ApiList = ({ apiData, onSelect, onEdit, onDelete, selectedApi }) => {
   const methodColors = {
@@ -56,7 +58,7 @@ export const ApiList = ({ apiData, onSelect, onEdit, onDelete, selectedApi }) =>
               }}
               title="수정"
             >
-              ✏️
+              <Pencil size={15}/>
             </button>
             <button 
               className="btn btn-small btn-ghost btn-danger"
@@ -68,7 +70,7 @@ export const ApiList = ({ apiData, onSelect, onEdit, onDelete, selectedApi }) =>
               }}
               title="삭제"
             >
-              🗑️
+              <Trash2 size={15}/>
             </button>
           </div>
         </div>

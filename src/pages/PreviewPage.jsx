@@ -43,7 +43,7 @@ export const PreviewPage = ({ apiData, onNavigate }) => {
                 className="btn btn-ghost"
                 onClick={() => onNavigate('editor')}
             >
-              ← 편집으로 돌아가기
+              ← 편집
             </button>
             <h1>API 문서</h1>
           </div>

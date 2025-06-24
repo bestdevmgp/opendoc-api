@@ -63,6 +63,9 @@
   flex: 1;
   padding: 20px;
   overflow-y: auto;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .api-list-section h3 {
@@ -111,7 +114,6 @@
   font-size: 1.1rem;
 }
 
-/* 반응형 디자인 */
 @media (max-width: 1024px) {
   .editor-content {
     flex-direction: column;
@@ -119,17 +121,17 @@
   
   .sidebar {
     width: 100%;
-    max-height: 50vh;
+    max-height: 100vh;
     border-right: none;
     border-bottom: 1px solid #e9ecef;
   }
   
   .api-form-section {
-    max-height: 300px;
+    max-height: 60vh;
   }
   
   .api-list-section {
-    max-height: 200px;
+    max-height: 20vh;
   }
 }
 
@@ -153,5 +155,13 @@
   .sidebar,
   .preview-section {
     padding: 16px;
+  }
+
+  .api-form-section {
+    max-height: 50vh;
+  }
+
+  .api-list-section {
+    min-height: 20vh;
   }
 }
