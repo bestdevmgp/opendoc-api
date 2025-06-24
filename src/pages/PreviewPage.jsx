@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { ApiPreview } from '../components/ApiPreview';
+import { ApiTester } from '../components/ApiTester';
 import '../styles/ApiPreview.css';
 
 export const PreviewPage = ({ apiData, onNavigate }) => {
   const [selectedApiId, setSelectedApiId] = useState(null);
+  const [activeTab, setActiveTab] = useState('documentation'); // 'documentation' or 'test'
 
   const groupedApis = apiData.reduce((acc, api) => {
     const method = api.method || 'GET';
@@ -22,6 +24,15 @@ export const PreviewPage = ({ apiData, onNavigate }) => {
     PATCH: '#50e3c2',
     HEAD: '#9012fe',
     OPTIONS: '#0d5aa7'
+  };
+
+  const handleApiSelect = (apiId) => {
+    if (selectedApiId === apiId) {
+      setSelectedApiId(null);
+    } else {
+      setSelectedApiId(apiId);
+      setActiveTab('documentation'); // 기본적으로 문서 탭으로 시작
+    }
   };
 
   return (
@@ -78,18 +89,18 @@ export const PreviewPage = ({ apiData, onNavigate }) => {
                       className="method-indicator"
                       style={{ backgroundColor: methodColors[method] }}
                     >
-                      {method}
+                      {/* 텍스트 제거 - 색상 표시만 */}
                     </span>
-                    메서드
+                    <span className="method-name">{method}</span>
+                    <span className="method-label">메서드</span>
+                    <span className="method-count">({apis.length}개)</span>
                   </h3>
                   
                   {apis.map((api) => (
                     <div key={api.id} className="api-item">
                       <div 
                         className="api-summary"
-                        onClick={() => setSelectedApiId(
-                          selectedApiId === api.id ? null : api.id
-                        )}
+                        onClick={() => handleApiSelect(api.id)}
                       >
                         <div className="api-summary-left">
                           <span 
@@ -110,7 +121,29 @@ export const PreviewPage = ({ apiData, onNavigate }) => {
                       
                       {selectedApiId === api.id && (
                         <div className="api-details">
-                          <ApiPreview api={api} />
+                          <div className="detail-tabs">
+                            <button
+                              className={`tab-btn ${activeTab === 'documentation' ? 'active' : ''}`}
+                              onClick={() => setActiveTab('documentation')}
+                            >
+                              📄 문서
+                            </button>
+                            <button
+                              className={`tab-btn ${activeTab === 'test' ? 'active' : ''}`}
+                              onClick={() => setActiveTab('test')}
+                            >
+                              🧪 테스트
+                            </button>
+                          </div>
+                          
+                          <div className="tab-content">
+                            {activeTab === 'documentation' && (
+                              <ApiPreview api={api} />
+                            )}
+                            {activeTab === 'test' && (
+                              <ApiTester api={api} />
+                            )}
+                          </div>
                         </div>
                       )}
                     </div>

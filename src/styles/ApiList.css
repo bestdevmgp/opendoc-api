@@ -1,7 +1,7 @@
 .api-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .api-list-empty {
@@ -16,7 +16,7 @@
 .api-item {
   background: white;
   border: 1px solid #e9ecef;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   transition: all 0.2s ease;
   cursor: pointer;
@@ -24,7 +24,8 @@
 
 .api-item:hover {
   border-color: #007bff;
-  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+  transform: translateY(-1px);
 }
 
 .api-item.selected {
@@ -33,39 +34,48 @@
 }
 
 .api-item-content {
-  padding: 12px 16px;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .api-item-header {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.api-item-header .method-badge {
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .api-item-header .endpoint {
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  font-size: 13px;
+  font-family: 'D2Coding', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
   font-weight: 500;
   color: #333;
   flex: 1;
+  line-height: 1.4;
+  word-break: break-all;
 }
 
 .api-description {
-  font-size: 12px;
+  font-size: 13px;
   color: #666;
-  line-height: 1.4;
-  margin-left: 72px;
+  line-height: 1.5;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .api-item-actions {
   display: flex;
-  gap: 4px;
-  padding: 0 16px 12px;
+  gap: 8px;
+  padding: 0 20px 16px;
   border-top: 1px solid #f1f3f4;
-  background: #f8f9fa;
+  background: #fafbfc;
+  justify-content: flex-end;
 }
 
 .api-item:hover .api-item-actions {
@@ -73,16 +83,10 @@
 }
 
 .api-item-actions .btn {
-  padding: 6px 8px;
+  padding: 8px 12px;
   font-size: 12px;
-  border-radius: 4px;
-}
-
-/* 메서드 배지 위치 조정 */
-.api-item .method-badge {
-  min-width: 55px;
-  font-size: 11px;
-  padding: 3px 6px;
+  border-radius: 6px;
+  min-width: auto;
 }
 
 /* 반응형 디자인 */
@@ -90,14 +94,15 @@
   .api-item-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 12px;
   }
   
-  .api-description {
-    margin-left: 0;
+  .api-item-content {
+    padding: 14px 16px;
   }
   
   .api-item-actions {
-    justify-content: flex-end;
+    padding: 0 16px 14px;
+    justify-content: flex-start;
   }
 }
