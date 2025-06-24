@@ -73,7 +73,7 @@ export const EditorPage = ({
             disabled={apiData.length === 0}
           >
             <List size={15}/>
-            <span>전체 미리보기</span>
+            <span>목록 보기</span>
           </button>
           <button 
             className="btn btn-primary"
