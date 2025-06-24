@@ -3,6 +3,8 @@ import { ApiForm } from '../components/ApiForm';
 import { ApiList } from '../components/ApiList';
 import { ApiPreview } from '../components/ApiPreview';
 import '../styles/EditorPage.css';
+import {Save} from "lucide-react";
+import {List} from "lucide-react";
 
 export const EditorPage = ({ 
   apiData, 
@@ -70,14 +72,16 @@ export const EditorPage = ({
             onClick={() => onNavigate('preview')}
             disabled={apiData.length === 0}
           >
-            👁 전체 미리보기
+            <List size={15}/>
+            <span>전체 미리보기</span>
           </button>
           <button 
             className="btn btn-primary"
             onClick={onSave}
             disabled={apiData.length === 0}
           >
-            💾 저장
+            <Save size={15}/>
+            <span>저장</span>
           </button>
         </div>
       </header>

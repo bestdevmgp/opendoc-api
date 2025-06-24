@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
 import '../styles/ApiTester.css';
+import {Rocket} from "lucide-react";
 
 export const ApiTester = ({ api }) => {
   const [baseUrl, setBaseUrl] = useState('https://jsonplaceholder.typicode.com');
@@ -278,7 +278,8 @@ Content-Type: application/json'
                 </>
             ) : (
                 <>
-                  🚀 API 테스트
+                  <Rocket size={15}/>
+                  <span>API 테스트</span>
                 </>
             )}
           </button>

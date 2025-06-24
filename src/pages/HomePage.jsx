@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import '../styles/HomePage.css';
+import {FilePlus2} from "lucide-react";
+import {Import} from "lucide-react";
 
 export const HomePage = ({ onNewProject, onUploadFile }) => {
   const fileInputRef = useRef(null);
@@ -25,18 +27,20 @@ export const HomePage = ({ onNewProject, onUploadFile }) => {
           </div>
 
           <div className="action-buttons">
-            <button 
+            <button
               className="btn btn-primary"
               onClick={onNewProject}
             >
-              📝 새 문서 시작
+              <FilePlus2 size={17}/>
+              <span>새 문서 시작하기</span>
             </button>
-            
-            <button 
+
+            <button
               className="btn btn-secondary"
               onClick={handleUploadClick}
             >
-              📂 기존 문서 불러오기
+              <Import size={17}/>
+              <span>기존 문서 불러오기</span>
             </button>
           </div>
 
@@ -45,7 +49,7 @@ export const HomePage = ({ onNewProject, onUploadFile }) => {
             type="file"
             accept=".json"
             onChange={onUploadFile}
-            style={{ display: 'none' }}
+            style={{ display: 'none'}}
           />
 
           <div className="features">
@@ -54,7 +58,7 @@ export const HomePage = ({ onNewProject, onUploadFile }) => {
               <p>복잡한 설정 없이 바로 API 문서를 작성할 수 있습니다.</p>
             </div>
             <div className="feature-card">
-              <h3>🔒 보안</h3>
+              <h3>🔒 안전한 환경</h3>
               <p>서버와 분리되어 API 정보가 외부에 노출되지 않습니다.</p>
             </div>
             <div className="feature-card">
@@ -65,7 +69,7 @@ export const HomePage = ({ onNewProject, onUploadFile }) => {
         </main>
 
         <footer className="home-footer">
-          <p>© 2024 OpenDoc API - 개발자: 2309 박민규</p>
+          <p>© 2025 OpenDoc API - @bestdevmgp</p>
         </footer>
       </div>
     </div>

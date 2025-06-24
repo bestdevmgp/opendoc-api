@@ -14,33 +14,30 @@
 
 .form-actions .btn {
   flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-/* 메서드 선택 스타일링 */
 .form-group select[name="method"] {
   font-weight: 600;
   background-color: #f8f9fa;
 }
 
-/* 엔드포인트 입력 스타일링 */
 .form-group input[name="endpoint"] {
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   font-size: 14px;
 }
 
-/* 텍스트 영역 스타일링 */
 .form-group textarea {
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   font-size: 13px;
   line-height: 1.4;
 }
 
-/* 응답 상태 코드 스타일링 */
 .form-group select[name="responseStatus"] {
   font-weight: 600;
 }
 
-/* 필수 필드 표시 */
 .form-group label::after {
   content: '';
 }
@@ -52,13 +49,11 @@
   color: #dc3545;
 }
 
-/* 포커스 상태 개선 */
 .form-control:focus {
   border-color: #007bff;
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
-/* 반응형 디자인 */
 @media (max-width: 768px) {
   .form-actions {
     flex-direction: column;
